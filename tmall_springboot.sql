@@ -11,7 +11,7 @@
  Target Server Version : 80035 (8.0.35)
  File Encoding         : 65001
 
- Date: 17/08/2024 12:16:05
+ Date: 18/08/2024 11:47:51
 */
 
 SET NAMES utf8mb4;
@@ -47,8 +47,6 @@ INSERT INTO `category` VALUES (80, '电热水器');
 INSERT INTO `category` VALUES (81, '沙发');
 INSERT INTO `category` VALUES (82, '马桶');
 INSERT INTO `category` VALUES (83, '平板电视');
-INSERT INTO `category` VALUES (87, '马');
-INSERT INTO `category` VALUES (90, '赛马娘');
 
 -- ----------------------------
 -- Table structure for order_
@@ -70,18 +68,11 @@ CREATE TABLE `order_`  (
   `status` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_order_user`(`uid` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of order_
 -- ----------------------------
-INSERT INTO `order_` VALUES (1, '201608241638122609867', '某某市，某某区，某某街道，某某号 ', '610000', '某某某', '15111111111', NULL, '2016-12-30 00:00:00', NULL, '2024-08-07 09:38:06', NULL, 14, 'waitConfirm');
-INSERT INTO `order_` VALUES (2, '202408141642509574368', '', '', '', '', '', '2024-08-14 08:42:51', NULL, NULL, NULL, 15, 'waitPay');
-INSERT INTO `order_` VALUES (3, '202408141642593636730', '', '', '', '', '', '2024-08-14 08:42:59', '2024-08-14 13:30:23', '2024-08-17 02:51:40', NULL, 15, 'waitConfirm');
-INSERT INTO `order_` VALUES (4, '202408141649312542636', '', '', '', '', '', '2024-08-14 08:49:31', NULL, NULL, NULL, 15, 'delete');
-INSERT INTO `order_` VALUES (5, '202408141653093001057', '', '', '', '', '', '2024-08-14 08:53:09', '2024-08-14 08:53:12', '2024-08-14 09:01:24', '2024-08-14 09:11:49', 15, 'finish');
-INSERT INTO `order_` VALUES (6, '202408171051191315235', '', '', '', '', '', '2024-08-17 02:51:19', '2024-08-17 02:51:22', '2024-08-17 02:51:41', '2024-08-17 02:51:59', 15, 'finish');
-INSERT INTO `order_` VALUES (7, '202408171057479727767', '', '', '', '', '', '2024-08-17 02:57:48', '2024-08-17 02:57:54', NULL, NULL, 15, 'delete');
 
 -- ----------------------------
 -- Table structure for orderitem
@@ -96,19 +87,11 @@ CREATE TABLE `orderitem`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_orderitem_user`(`uid` ASC) USING BTREE,
   INDEX `fk_orderitem_product`(`pid` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of orderitem
 -- ----------------------------
-INSERT INTO `orderitem` VALUES (1, 90, 1, 5, 2);
-INSERT INTO `orderitem` VALUES (2, 88, 1, 5, 2);
-INSERT INTO `orderitem` VALUES (3, 88, 3, 15, 3);
-INSERT INTO `orderitem` VALUES (5, 263, 4, 15, 1);
-INSERT INTO `orderitem` VALUES (6, 87, 5, 15, 1);
-INSERT INTO `orderitem` VALUES (7, 87, 7, 15, 2);
-INSERT INTO `orderitem` VALUES (8, 972, 6, 15, 1);
-INSERT INTO `orderitem` VALUES (9, 149, 7, 15, 1);
 
 -- ----------------------------
 -- Table structure for product
@@ -14841,8 +14824,6 @@ CREATE TABLE `review`  (
 -- ----------------------------
 -- Records of review
 -- ----------------------------
-INSERT INTO `review` VALUES (1, '好好好', 15, 87, '2024-08-14 09:16:02');
-INSERT INTO `review` VALUES (2, '海湾妈妈，好好好', 15, 972, '2024-08-17 02:52:17');
 
 -- ----------------------------
 -- Table structure for user
@@ -14859,15 +14840,8 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, '测试用户1', 'password1', NULL);
-INSERT INTO `user` VALUES (2, '测试用户2', 'password2', NULL);
-INSERT INTO `user` VALUES (3, '测试用户3', 'password3', NULL);
-INSERT INTO `user` VALUES (4, '测试用户4', 'password4', NULL);
-INSERT INTO `user` VALUES (5, '测试用户5', 'password5', NULL);
-INSERT INTO `user` VALUES (14, '测试用户14', 'password14', NULL);
-INSERT INTO `user` VALUES (15, 'ingker', '123456', '3EVF0n17vKRKED/c0Vzhdw==');
+INSERT INTO `user` VALUES (15, 'ingker', '55984704006814329ba2d9f1b43eb531', '3EVF0n17vKRKED/c0Vzhdw==');
 INSERT INTO `user` VALUES (16, 'test', '123456', NULL);
 INSERT INTO `user` VALUES (17, 'shirotest', '55984704006814329ba2d9f1b43eb531', '3EVF0n17vKRKED/c0Vzhdw==');
-INSERT INTO `user` VALUES (18, 'ceshi', '123456', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
